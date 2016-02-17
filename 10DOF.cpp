@@ -1,7 +1,7 @@
 /***************************************************************************
-  This is a library for the Adafruit 9DOF Breakout
+  This is a library for the Adafruit 10DOF Breakout
 
-  Designed specifically to work with the Adafruit 9DOF Breakout:
+  Designed specifically to work with the Adafruit 10DOF Breakout:
   http://www.adafruit.com/products/1714
 
   These displays use I2C to communicate, 2 pins are required to interface.
@@ -32,10 +32,10 @@
 
 /**************************************************************************/
 /*!
-    @brief  Instantiates a new Adafruit_9DOF class
+    @brief  Instantiates a new Adafruit_10DOF class
 */
 /**************************************************************************/
-Adafruit_9DOF::Adafruit_9DOF(void)
+Adafruit_10DOF::Adafruit_10DOF(void)
 {
 }
 
@@ -48,7 +48,7 @@ Adafruit_9DOF::Adafruit_9DOF(void)
     @brief  Setups the HW
 */
 /**************************************************************************/
-bool Adafruit_9DOF::begin()
+bool Adafruit_10DOF::begin()
 {
   // Enable I2C
   Wire.begin();
@@ -80,7 +80,7 @@ bool Adafruit_9DOF::begin()
     @endcode
 */
 /**************************************************************************/
-bool Adafruit_9DOF::accelGetOrientation(sensors_event_t *event, sensors_vec_t *orientation)
+bool Adafruit_10DOF::accelGetOrientation(sensors_event_t *event, sensors_vec_t *orientation)
 {
   /* Make sure the input is valid, not null, etc. */
   if (event == NULL) return false;
@@ -143,7 +143,7 @@ bool Adafruit_9DOF::accelGetOrientation(sensors_event_t *event, sensors_vec_t *o
     @endcode
 */
 /**************************************************************************/
-bool Adafruit_9DOF::magTiltCompensation(sensors_axis_t axis, sensors_event_t *mag_event, sensors_event_t *accel_event)
+bool Adafruit_10DOF::magTiltCompensation(sensors_axis_t axis, sensors_event_t *mag_event, sensors_event_t *accel_event)
 {
   /* Make sure the input is valid, not null, etc. */
   if (mag_event == NULL) return false;
@@ -230,7 +230,7 @@ bool Adafruit_9DOF::magTiltCompensation(sensors_axis_t axis, sensors_event_t *ma
     @endcode
 */
 /**************************************************************************/
-bool Adafruit_9DOF::magGetOrientation(sensors_axis_t axis, sensors_event_t *event, sensors_vec_t *orientation)
+bool Adafruit_10DOF::magGetOrientation(sensors_axis_t axis, sensors_event_t *event, sensors_vec_t *orientation)
 {
   /* Make sure the input is valid, not null, etc. */
   if (event == NULL) return false;
@@ -296,7 +296,7 @@ bool Adafruit_9DOF::magGetOrientation(sensors_axis_t axis, sensors_event_t *even
                           .roll, .pitch and .heading fields populated
 */
 /**************************************************************************/
-bool Adafruit_9DOF::fusionGetOrientation(sensors_event_t *accel_event, sensors_event_t *mag_event, sensors_vec_t *orientation)
+bool Adafruit_10DOF::fusionGetOrientation(sensors_event_t *accel_event, sensors_event_t *mag_event, sensors_vec_t *orientation)
 {
   /* Make sure the input is valid, not null, etc. */
   if ( accel_event  == NULL) return false;
